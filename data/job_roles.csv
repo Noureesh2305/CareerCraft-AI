@@ -1,0 +1,6 @@
+job_role,required_skills
+Data Scientist,"python, machine learning, sql, statistics, pandas"
+ML Engineer,"python, machine learning, deep learning, tensorflow, numpy"
+AI Engineer,"python, machine learning, deep learning, nlp"
+Data Analyst,"python, sql, data analysis, pandas, excel"
+Software Engineer,"python, java, c++, data structures, problem solving"

@@ -1,0 +1,60 @@
+job_role,category,difficulty,question
+Data Scientist,Basic,Easy,"What is machine learning?"
+Data Scientist,Basic,Medium,"What are the main responsibilities of a data scientist?"
+Data Scientist,Basic,Hard,"Explain the complete data science lifecycle."
+
+Data Scientist,Technical,Easy,"What is a dataset?"
+Data Scientist,Technical,Medium,"What is overfitting and how do you prevent it?"
+Data Scientist,Technical,Hard,"Explain bias variance tradeoff with a real world example."
+
+Data Scientist,Aptitude,Easy,"If a model has high accuracy on training data, is it always good?"
+Data Scientist,Aptitude,Medium,"If test accuracy is much lower than training accuracy, what does it indicate?"
+Data Scientist,Aptitude,Hard,"How would you evaluate a model when accuracy is misleading?"
+
+Data Scientist,Hard,Easy,"What is feature scaling?"
+Data Scientist,Hard,Medium,"Explain regularization techniques in machine learning."
+Data Scientist,Hard,Hard,"How does cross validation help in model selection?"
+
+Data Scientist,Extreme,Easy,"Why is data preprocessing important?"
+Data Scientist,Extreme,Medium,"How would you handle missing and noisy data in a real project?"
+Data Scientist,Extreme,Hard,"Design an end to end machine learning system for fraud detection."
+
+ML Engineer,Basic,Easy,"What is the difference between AI and machine learning?"
+ML Engineer,Basic,Medium,"What are the stages of a machine learning pipeline?"
+ML Engineer,Basic,Hard,"Explain how machine learning differs from traditional programming."
+
+ML Engineer,Technical,Easy,"What is a machine learning model?"
+ML Engineer,Technical,Medium,"What is feature engineering and why is it important?"
+ML Engineer,Technical,Hard,"Explain hyperparameter tuning with examples."
+
+ML Engineer,Aptitude,Easy,"What happens if the learning rate is too high?"
+ML Engineer,Aptitude,Medium,"What happens if the learning rate is too low?"
+ML Engineer,Aptitude,Hard,"How does batch size affect model training?"
+
+ML Engineer,Hard,Easy,"What is gradient descent?"
+ML Engineer,Hard,Medium,"Explain vanishing and exploding gradient problems."
+ML Engineer,Hard,Hard,"How do you optimize deep learning models for performance?"
+
+ML Engineer,Extreme,Easy,"Why is model evaluation important?"
+ML Engineer,Extreme,Medium,"How would you debug a model that performs well during training but poorly in testing?"
+ML Engineer,Extreme,Hard,"How would you deploy and monitor a machine learning model in production?"
+
+Software Engineer,Basic,Easy,"What is programming?"
+Software Engineer,Basic,Medium,"What are data structures and why are they important?"
+Software Engineer,Basic,Hard,"Explain object oriented programming concepts."
+
+Software Engineer,Technical,Easy,"What is a variable in programming?"
+Software Engineer,Technical,Medium,"Explain exception handling in Python."
+Software Engineer,Technical,Hard,"Explain memory management in programming languages."
+
+Software Engineer,Aptitude,Easy,"What is time complexity?"
+Software Engineer,Aptitude,Medium,"What is the time complexity of binary search?"
+Software Engineer,Aptitude,Hard,"How would you optimize an algorithm with high time complexity?"
+
+Software Engineer,Hard,Easy,"What is multithreading?"
+Software Engineer,Hard,Medium,"Explain the difference between multithreading and multiprocessing."
+Software Engineer,Hard,Hard,"How do you design scalable software systems?"
+
+Software Engineer,Extreme,Easy,"Why is system design important?"
+Software Engineer,Extreme,Medium,"How would you handle a sudden spike in user traffic?"
+Software Engineer,Extreme,Hard,"Design a highly available and fault tolerant system."

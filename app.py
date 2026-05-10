@@ -1,5 +1,7 @@
 import streamlit as st
 import pandas as pd
+import plotly.graph_objects as go
+from io import StringIO
 
 # ===== IMPORT MODULES =====
 from modules.resume_upload import extract_text_from_pdf
@@ -176,6 +178,62 @@ if "question" in st.session_state:
             sentiment_confidence_chart(confidence),
             use_container_width=True
         )
+
+    # ===== DASHBOARD ENHANCEMENTS =====
+    st.subheader("📤 Export Report")
+    if st.button("Download Feedback Report"):
+        report = f"Resume Score: {resume_score}\nMatched Skills: {matched}\nMissing Skills: {missing}\nFeedback: {'; '.join(feedback)}"
+        st.download_button("Download as Text", data=report, file_name="career_report.txt", mime="text/plain")
+
+    # ===== USER GENERATED CONTENT =====
+    st.divider()
+    st.header("📝 Contribute Interview Questions")
+    with st.form("question_form"):
+        new_question = st.text_area("Submit a new interview question")
+        q_category = st.selectbox("Category", ["Basic", "Technical", "Aptitude", "Hard", "Extreme"])
+        q_difficulty = st.selectbox("Difficulty", ["Easy", "Medium", "Hard"])
+        submitted = st.form_submit_button("Submit")
+        if submitted and new_question:
+            # Save to CSV
+            new_data = pd.DataFrame([[new_question, q_category, q_difficulty]], columns=["question", "category", "difficulty"])
+            try:
+                existing = pd.read_csv("data/interview_questions.csv")
+                updated = pd.concat([existing, new_data], ignore_index=True)
+            except FileNotFoundError:
+                updated = new_data
+            updated.to_csv("data/interview_questions.csv", index=False)
+            st.success("Question submitted! Thank you for contributing.")
+
+    # ===== INTEGRATION WITH LEARNING PLATFORMS =====
+    st.divider()
+    st.header("📚 Learning Recommendations")
+    if missing:
+        st.write("Based on your missing skills, here are some recommended learning platforms:")
+        platforms = {
+            "Coursera": "https://www.coursera.org",
+            "Udemy": "https://www.udemy.com",
+            "edX": "https://www.edx.org",
+            "Khan Academy": "https://www.khanacademy.org",
+            "LinkedIn Learning": "https://www.linkedin.com/learning"
+        }
+        for name, url in platforms.items():
+            st.markdown(f"- [{name}]({url}) - Search for courses on {', '.join(missing[:3])}")
+    else:
+        st.write("No missing skills detected. Great job!")
+
+    # ===== CAREER PATH VISUALIZATION =====
+    st.divider()
+    st.header("🚀 Career Path Visualization")
+    # Simple timeline chart
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=["Entry Level", "Mid Level", "Senior Level", "Expert"],
+        y=[30, 60, 90, 120],  # Example salary progression
+        mode='lines+markers',
+        name='Salary Progression (k USD)'
+    ))
+    fig.update_layout(title="Sample Career Path for " + selected_role, xaxis_title="Career Stage", yaxis_title="Salary (k USD)")
+    st.plotly_chart(fig, use_container_width=True)
 
 else:
     st.info("👆 Please upload a resume PDF to begin.")

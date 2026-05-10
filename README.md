@@ -17,8 +17,8 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/CareerCraft_AI.git
-   cd CareerCraft_AI
+   git clone https://github.com/Noureesh2305/CareerCraft-AI.git
+   cd CareerCraft-AI
    ```
 
 2. Create a virtual environment:
@@ -52,11 +52,45 @@
 - Python 3.8+
 - Libraries: See `requirements.txt`
 
+## Technologies Used
+
+- **Python** - Core programming language
+- **Streamlit** - Web application framework
+- **Pandas, NumPy** - Data manipulation
+- **NLTK** - VADER Sentiment Analysis
+- **Plotly** - Data visualization
+- **PyPDF2** - PDF text extraction
+- **Transformers, Torch** - NLP models
+
 ## Data
 
 - `data/job_roles.csv`: List of job roles.
 - `data/interview_questions.csv`: Interview questions database.
 - `data/sample_resumes.csv`: Sample resume data.
+
+## Project Structure
+
+```
+CareerCraft-AI/
+├── app.py
+├── requirements.txt
+├── README.md
+├── data/
+│   ├── interview_questions.csv
+│   ├── job_roles.csv
+│   └── sample_resumes.csv
+├── modules/
+│   ├── feedback.py
+│   ├── gap_analysis.py
+│   ├── interview.py
+│   ├── resume_score.py
+│   ├── resume_upload.py
+│   ├── sentiment_analysis.py
+│   └── skill_analysis.py
+└── utils/
+    ├── charts.py
+    └── text_cleaner.py
+```
 
 ## Contributing
 
